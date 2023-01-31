@@ -13,43 +13,42 @@ class App extends Component{
     loading:false
   }
   static propTypes={
-    searchUsers:PropTypes.func.isRequired,
+    searchUsers:
   }
-  // // async componentDidMount(){
-  // //   console.log(process.env.REACT_APP_GITHUB_CLIENT_SECRET);
-  // //   // axios.get('https://api.github.com/users').then(res=>console.log(res.data));
-  // //   this.setState({loading:true})
-  // //   const res= await axios.get(`https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET} `);
-  // //   
-  // //   this.setState({users:res.data,loading:false})
+  async componentDidMount(){
+    console.log(process.env.REACT_APP_GITHUB_CLIENT_SECRET);
+    // axios.get('https://api.github.com/users').then(res=>console.log(res.data));
+    this.setState({loading:true})
+    const res= await axios.get(`https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET} `);
+    console.log(res.data);
+    this.setState({users:res.data,loading:false})
 
-  // }
+  }
   static defaultProps={
     title:"Github Finder",
     icon:'fab fa-github'
   }
-  
+  static propTypes={
+    title: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired
+  }
 //Search Github Users
   searchUsers= async (text) =>{
     const res= await axios.get(`https://api.github.com/search/users?q=${text}&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET} `);
     console.log(res.data);
     this.setState({users:res.data.items,loading:false});
+
+
   }
-
-  //Clear Github Users
-  clearUsers= () => this.setState({users:[], loading:false})
-
-
   render(){
-    const {users, loading}=this.state;
   return (
    
     <div className="App">
        <Navbar title="Github Finder" icon='fab fa-github'/>
 
        <div className='container'>
-        <Search searchUsers={this.searchUsers} clearUsers={this.clearUsers} showClear={users.length > 0 ?true : false} />
-       <Users loading={loading} users={users} />
+        <Search searchUsers={this.searchUsers}/>
+       <Users loading={this.state.loading} users={this.state.users}/>
        </div>
        
     </div>

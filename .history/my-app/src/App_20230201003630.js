@@ -49,7 +49,7 @@ class App extends Component{
 
        <div className='container'>
         <Search searchUsers={this.searchUsers} clearUsers={this.clearUsers} showClear={users.length > 0 ?true : false} />
-       <Users loading={loading} users={users} />
+       <Users loading={this.state.loading} users={this.state.users} />
        </div>
        
     </div>

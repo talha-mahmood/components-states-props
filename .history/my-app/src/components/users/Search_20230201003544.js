@@ -23,7 +23,7 @@ export class Search extends Component {
 
     }
   render() {
-    
+    const {users, loading}=this.
     const {showClear,clearUsers}=this.props;
     return (
       <div>

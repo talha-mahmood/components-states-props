@@ -48,8 +48,8 @@ class App extends Component{
        <Navbar title="Github Finder" icon='fab fa-github'/>
 
        <div className='container'>
-        <Search searchUsers={this.searchUsers} clearUsers={this.clearUsers} showClear={users.length > 0 ?true : false} />
-       <Users loading={loading} users={users} />
+        <Search searchUsers={this.searchUsers} clearUsers={this.clearUsers} showClear={this.state.users.length > 0 ?true : false} />
+       <Users loading={this.state.loading} users={this.state.users} />
        </div>
        
     </div>
