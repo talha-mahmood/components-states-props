@@ -47,8 +47,8 @@ class App extends Component{
     this.setState({alert:{msg:msg, type:type}});
     setTimeout  (() => this.setState({alert:null}),5000)
 
-    };
-  
+    }
+  }
 
 
   render(){

@@ -6,7 +6,7 @@ import Search from './components/users/Search';
 import PropTypes from 'prop-types';
 import axios from 'axios'
 import Users from './components/users/Users';
-import Alert from './components/layout/Alert';
+import 
 
 class App extends Component{
   state={
@@ -45,10 +45,7 @@ class App extends Component{
   // Set Alert
   setAlert= (msg,type) =>{
     this.setState({alert:{msg:msg, type:type}});
-    setTimeout  (() => this.setState({alert:null}),5000)
-
-    };
-  
+  }
 
 
   render(){
@@ -59,7 +56,6 @@ class App extends Component{
        <Navbar title="Github Finder" icon='fab fa-github'/>
 
        <div className='container'>
-        <Alert alert={this.state.alert}/>
         <Search searchUsers={this.searchUsers} clearUsers={this.clearUsers} showClear={users.length > 0 ?true : false} setAlert={this.setAlert}/>
        <Users loading={loading} users={users} />
        </div>

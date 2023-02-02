@@ -10,7 +10,7 @@ export class Search extends Component {
       showClear:PropTypes.bool.isRequired,
       setAlert:PropTypes.func.isRequired
 
-    }
+ }
 
     onChange = e =>{
         this.setState({[e.target.name]: e.target.value});

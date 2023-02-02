@@ -7,8 +7,8 @@ export class Search extends Component {
     static propTypes={
       searchUsers:PropTypes.func.isRequired,
       clearUsers:PropTypes.func.isRequired,
-      showClear:PropTypes.bool.isRequired,
-      setAlert:PropTypes.func.isRequired
+      showClear:PropTypes.bool.isRequired
+
 
     }
 
@@ -23,7 +23,8 @@ export class Search extends Component {
       }
       else{
         this.props.searchUsers(this.state.text);
-        this.setState({text:''})
+      this.setState({text:''})
+
       }
       
 

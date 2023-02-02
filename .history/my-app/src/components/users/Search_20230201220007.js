@@ -10,6 +10,7 @@ export class Search extends Component {
       showClear:PropTypes.bool.isRequired,
       setAlert:PropTypes.func.isRequired
 
+
     }
 
     onChange = e =>{
