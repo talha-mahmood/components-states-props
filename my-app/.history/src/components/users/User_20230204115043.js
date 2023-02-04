@@ -22,7 +22,7 @@ export class User extends Component {
         name,company,avatar_url,location,bio,blog,login,html_url,followers,following,public_repos,public_gists,hireable
     }=this.props.user;
 
-    const{loading,repos}=this.props;
+    const{loading}=this.props;
 
     if(loading) return <Spinner/>
     return (
@@ -72,7 +72,7 @@ export class User extends Component {
           </div>
           </div>
 
-          <Repos repos={repos}/>
+          <Repos repos={repos}
          
       </Fragment>
     )

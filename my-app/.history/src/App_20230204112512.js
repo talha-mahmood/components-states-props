@@ -15,7 +15,6 @@ class App extends Component{
   state={
     users:[],
     user:{},
-    repos:[],
     loading:false,
     alert:null,
    
@@ -81,7 +80,7 @@ getUser= async (username) =>{
 
 
   render() { 
-    const {users, user,loading,repos}=this.state;
+    const {users, user,loading}=this.state;
   return (
     <Router>
    
@@ -102,7 +101,7 @@ getUser= async (username) =>{
           )}/>
           <Route exact path='/about' component={About}/>
           <Route exact path='/user/:login' render={props => (
-            <User {...props} getUser={this.getUser} user={user} loading={loading} getUserRepos={this.getUserRepos} repos={repos}/>
+            <User {...props} getUser={this.getUser} user={user} loading={loading}/>
           )}/>
 
         </Switch>
