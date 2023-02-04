@@ -45,14 +45,14 @@ class App extends Component{
   }
 
   // Get Single Github User
-getUser= async (username) =>{
-  this.setState({loading:true});
+// getUser= async (username) =>{
+//   this.setState({loading:true});
 
   
-    const res= await axios.get(`https://api.github.com/users/${username}?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET} `);
-    console.log(res.data);
-    this.setState({user:res.data,loading:false});
-  }
+//     const res= await axios.get(`https://api.github.com/search/users/${username}?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET} `);
+//     console.log(res.data);
+//     this.setState({user:res.data,loading:false});
+//   }
 
   //Clear Github Users
   clearUsers= () => this.setState({users:[], loading:false})

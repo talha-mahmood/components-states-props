@@ -62,10 +62,10 @@ export class User extends Component {
             </ul>
           </div>
           <div className='card text-center'>
-            <div className='badge bg-primary'>Followers: {followers}</div>
-            <div className='badge bg-success'>Following: {following}</div>
-            <div className='badge bg-danger'>Pubic repos: {public_repos}</div>
-            <div className='badge bg-dark'>Public Gists: {public_gists}</div>
+            <div className='badge '>Followers: {followers}</div>
+            <div className='badge bg-dark'>Following: {following}</div>
+            <div className='badge b'>Pubic repos: {public_repos}</div>
+            <div className='badge badge-success'>Public Gists: {public_gists}</div>
           </div>
           </div>
          

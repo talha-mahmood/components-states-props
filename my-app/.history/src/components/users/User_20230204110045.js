@@ -16,7 +16,7 @@ export class User extends Component {
     }
   render() {
     const{
-        name,company,avatar_url,location,bio,blog,login,html_url,followers,following,public_repos,public_gists,hireable
+        name,avatar_url,location,bio,blog,login,html_url,followers,following,public_repos,public_gists,hireable
     }=this.props.user;
 
     const{loading}=this.props;
@@ -55,20 +55,13 @@ export class User extends Component {
                   </Fragment>}
               </li>
                <li>
-                {blog && <Fragment>
-                  <strong>Website:</strong>{blog}
+                {logi && <Fragment>
+                  <strong>Username:</strong>{login}
                   </Fragment>}
               </li>
             </ul>
           </div>
-          <div className='card text-center'>
-            <div className='badge bg-primary'>Followers: {followers}</div>
-            <div className='badge bg-success'>Following: {following}</div>
-            <div className='badge bg-danger'>Pubic repos: {public_repos}</div>
-            <div className='badge bg-dark'>Public Gists: {public_gists}</div>
           </div>
-          </div>
-         
       </Fragment>
     )
   }
