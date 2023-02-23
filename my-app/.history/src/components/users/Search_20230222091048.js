@@ -1,22 +1,22 @@
 import React, {useState } from 'react'
 
 import PropTypes from 'prop-types'
-const Search =({searchUsers,showClear,clearUsers, setAlert})=>{
-    const [text, setText]=useState("")
+const Search =({searchUsers,showClear,clearUsers})=>{
+    const [text,setText]
     
 
    const onChange = e =>{
-        setText(e.target.value);
+        this.setState({[e.target.name]: e.target.value});
     }
 
    const onSubmit=(e)=>{
       e.preventDefault();
-      if(text===''){
-        setAlert('please enter something','light')
+      if(this.state.text===''){
+        this.props.setAlert('please enter something','light')
       }
       else{
-        searchUsers(text);
-        setText("");
+        this.props.searchUsers(this.state.text);
+        this.setState({text:''})
       }
       
 
@@ -24,8 +24,8 @@ const Search =({searchUsers,showClear,clearUsers, setAlert})=>{
      return (
       // const {showClear,clearUsers}=this.props;
       <div>
-        <form  onSubmit={onSubmit}className='form'>
-            <input type="text" name="text" placeholder='Search Users..' value={text} onChange={onChange}/>
+        <form  onSubmit={this.onSubmit}className='form'>
+            <input type="text" name="text" placeholder='Search Users..' value={this.state.text} onChange={this.onChange}/>
             <input type="submit" className="btn btn-dark btn-block" value="Search"/>
             
         </form>

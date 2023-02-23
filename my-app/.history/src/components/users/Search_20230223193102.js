@@ -12,11 +12,11 @@ const Search =({searchUsers,showClear,clearUsers, setAlert})=>{
    const onSubmit=(e)=>{
       e.preventDefault();
       if(text===''){
-        setAlert('please enter something','light')
+        this.props.setAlert('please enter something','light')
       }
       else{
-        searchUsers(text);
-        setText("");
+        this.props.searchUsers(this.state.text);
+        this.setState({text:''})
       }
       
 
